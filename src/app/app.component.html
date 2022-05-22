@@ -1,5 +1,5 @@
 <div>
-    <div>
+    <div class="text-center">
         <p>
             Tên sv:
             <app-name [name]='studentName'></app-name>
@@ -7,6 +7,41 @@
         <p>Mã SV:
             <app-identity [mssv]='studentMSV'></app-identity>
         </p>
+
     </div>
-    <app-table [champions]="champs"></app-table>
+
+    <div class="container ">
+
+        <div>
+            <h4>Su Kien</h4>
+            <button class="btn btn-primary" (click)="onClickBtn()">
+           {{showStatus ? 'An ' : 'Hien'}} Bang du lieu
+        </button>
+            <div class="m-auto">
+                <h2>Form Angular</h2>
+                <div>
+                    <label for="input">Name</label>
+                    <input type="text" id="input" (input)="onInput($event, 'name')" [value]="inputValue.name">
+                </div>
+                <div>
+                    <label for="input">Avatar</label>
+                    <input type="text" id="input" (input)="onInput($event, 'avatar')" [value]="inputValue.avatar">
+                </div>
+                <div>
+                    <label for="input">Speed</label>
+                    <input type="text" id="input" (input)="onInput($event, 'speed')" [value]="inputValue.speed">
+                </div>
+                <div>
+                    <button class="btn btn-success" (click)="onSubmit()">
+        Submit
+      </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <app-table [champions]="champs" class="{{showStatus ? 'db' : 'dn'}}"></app-table> -->
+
+    <app-table [champions]="champs" *ngIf="showStatus"></app-table>
 </div>

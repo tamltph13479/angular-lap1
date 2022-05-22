@@ -46,6 +46,45 @@ export class AppComponent {
   ]
   studentName = 'Le The Tam'
   studentMSV = 'PH13479'
+  // Su kien
+  showStatus = true;
+  onClickBtn() {
+    console.log("Btn clicked!")
+    this.showStatus = !this.showStatus;
+
+  }
+  inputValue = {
+    name: '',
+    avatar: '',
+    dame: '',
+    defend: '',
+    speed: '',
+    price: '',
+  };
+  onInput(event: any, key: 'name' | 'avatar' | 'speed' | 'dame' | 'defend' | 'price') {
+    this.inputValue[key] = event.target.value;
+  }
+
+  onSubmit() {
+    console.log('Giá trị obj các ô input', this.inputValue);
+    // push obj this.input vào mảng champs để thêm 1 dòng dữ liệu mới
+    // inputValue sẽ có cấu trúc như obj trong mảng champs
+    // cần format lại obj theo đúng cấu trúc dữ liệu trong champs
+    this.champs.push({
+      ...this.inputValue,
+      dame: +this.inputValue.dame,
+      defend: +this.inputValue.defend,
+      speed: +this.inputValue.speed,
+      price: +this.inputValue.price,
+    });
+    // Gán lại giá trị default cho this.inputValue
+    this.inputValue = {
+      name: '',
+      avatar: '',
+      dame: '',
+      defend: '',
+      speed: '',
+      price: '',
+    };
+  }
 }
-
-
