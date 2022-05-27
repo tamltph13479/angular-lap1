@@ -12,7 +12,9 @@ import { IdentityComponent } from './identity/identity.component';
 import { DameComponent } from './dame/dame.component';
 import { FormComponent } from './form/form.component';
 import { ShowValidateComponent } from './components/show-validate/show-validate.component';
-
+import { UsersComponent } from './users/users.component';
+import { ListComponent } from './users/list/list.component';
+import { UserFormComponent } from './users/form/form.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,10 @@ import { ShowValidateComponent } from './components/show-validate/show-validate.
     IdentityComponent,
     DameComponent,
     FormComponent,
-    ShowValidateComponent
+    ShowValidateComponent,
+    UsersComponent,
+    ListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

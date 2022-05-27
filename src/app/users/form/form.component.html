@@ -1,8 +1,6 @@
-<!-- <p>{{userForm.valid | json}}</p> -->
-<p>{{inputValue | json}}</p>
 <form action="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div>
-        <input type="hidden" name="id" [(ngModel)]="inputValue.id" required #id="ngModel" minlength="10" maxlength="32">
+        <input type="text" name="id" [(ngModel)]="inputValue.id" required #id="ngModel" minlength="10" maxlength="32">
     </div>
     <div class="form-group">
         <label for="">Ten</label>
@@ -28,29 +26,3 @@
         <button class="btn btn-success" [disabled]="!userForm.valid">Submit</button>
     </div>
 </form>
-
-<div>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Ten</th>
-                <th>Tuoi</th>
-                <th>Email</th>
-                <th>SDT</th>
-                <th colspan="2">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of users">
-                <td>{{ user.id }}</td>
-                <td>{{ user.name }}</td>
-                <td>{{ user.age }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.phone }}</td>
-                <td><button class="btn btn-primary">Edit</button></td>
-                <td><button class="btn btn-success">Remove</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
