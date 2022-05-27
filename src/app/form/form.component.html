@@ -2,13 +2,13 @@
 <p>{{inputValue | json}}</p>
 <form action="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div>
-        <input type="hidden" name="id" [(ngModel)]="inputValue.id" required #name="ngModel" minlength="10" maxlength="32">
+        <input type="hidden" name="id" [(ngModel)]="inputValue.id" required #id="ngModel" minlength="10" maxlength="32">
     </div>
     <div class="form-group">
         <label for="">Ten</label>
-        <input type="text" class="form-control" name="email" [(ngModel)]="inputValue.email" required #email="ngModel" required>
+        <input type="text" class="form-control" name="name" [(ngModel)]="inputValue.name" required #name="ngModel" required>
     </div>
-    <app-show-validate [field]="email" key="email"></app-show-validate>
+    <app-show-validate [field]="name" key="Ten"></app-show-validate>
     <div class="form-group">
         <label for="">Tuoi user</label>
         <input type="number" class="form-control" name="age" [(ngModel)]="inputValue.age" required #age="ngModel" required min="1" max="100">
