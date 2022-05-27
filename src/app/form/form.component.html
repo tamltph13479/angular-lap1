@@ -1,0 +1,56 @@
+<!-- <p>{{userForm.valid | json}}</p> -->
+<p>{{inputValue | json}}</p>
+<form action="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <div>
+        <input type="hidden" name="id" [(ngModel)]="inputValue.id" required #name="ngModel" minlength="10" maxlength="32">
+    </div>
+    <div class="form-group">
+        <label for="">Ten</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="inputValue.email" required #email="ngModel" required>
+    </div>
+    <app-show-validate [field]="email" key="email"></app-show-validate>
+    <div class="form-group">
+        <label for="">Tuoi user</label>
+        <input type="number" class="form-control" name="age" [(ngModel)]="inputValue.age" required #age="ngModel" required min="1" max="100">
+    </div>
+    <app-show-validate [field]="age" key="Tuổi"></app-show-validate>
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="inputValue.email" required #email="ngModel" required>
+    </div>
+    <app-show-validate [field]="email" key="email"></app-show-validate>
+    <div class="form-group">
+        <label for="">Phone</label>
+        <input type="number" id="phone" class="form-control" name="phone" [(ngModel)]="inputValue.phone" required #phone="ngModel" required min="12" max="15">
+    </div>
+    <app-show-validate [field]="phone" key="phone"></app-show-validate>
+    <div>
+        <button class="btn btn-success" [disabled]="!userForm.valid">Submit</button>
+    </div>
+</form>
+
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ten</th>
+                <th>Tuoi</th>
+                <th>Email</th>
+                <th>SDT</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td><button class="btn btn-primary">Edit</button></td>
+                <td><button class="btn btn-success">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
