@@ -23,10 +23,10 @@ export class UserFormComponent implements OnInit {
     // 3 ban du lieu de
     this.handleSubmit.emit(userForm.value)
     // // cap nhap lai form
-    // userForm.resetForm({
-    //   name: '',
-    //   age: 0
-    // });
+    userForm.resetForm({
+      name: '',
+      age: 0
+    });
   }
 
 }

@@ -18,7 +18,8 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.phone }}</td>
                 <td><button class="btn btn-primary" (click)="onEdit(user.id)">Edit</button></td>
-                <td><button class="btn btn-success">Remove</button></td>
+                <td><button class="btn btn-danger" (click)="onDelete(user.id)">Remove</button></td>
+
             </tr>
         </tbody>
     </table>
